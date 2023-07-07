@@ -151,3 +151,17 @@ project.add_child(properties);
         Ok(_) => println!("wrote to file successfully!"),
     };
 }
+
+fn add_depedency(root: XMLElement) -> XMLElement {
+    let dependency = XMLElement::new("dependency");
+    dependency.add_child(
+                            <dependency>
+                                <groupId>org.junit</groupId>
+                                <artifact_id>junit-bom</artifact_id>
+                                <version>5.9.3</version>
+                                <type>pom</type>
+                                <scope>import</scope>
+                        </dependency>
+
+    return root;
+}
